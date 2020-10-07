@@ -3,30 +3,15 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from CC_Flask import app, db, bcrypt
-from CC_Flask.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
+from CC_Flask.users.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
 from CC_Flask.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
-
-
-posts = [
-    {
-        'author': 'James Lenahan',
-        'title': 'Startup 1',
-        'content': 'First post content',
-        'date_posted': '10/6/2020'
-    },
-    {
-        'author': 'Jenny Wenny Wenny',
-        'title': 'Startup 2',
-        'content': 'Second post content',
-        'date_posted': '10/7/2020'
-    }
-]
 
 
 @app.route("/")
 @app.route("/home")
 def home():
+    posts = Post.query.all()
     return render_template('home.html', posts=posts)
 
 
@@ -105,6 +90,8 @@ def account():
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', title='Account',
                            image_file=image_file, form=form)
+
+
 @app.route("/post/new", methods=['GET', 'POST'])
 @login_required
 def new_post():
