@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block content %}
+<form>
+    <div class="form-group">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Full Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John Smith">
+      </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Are you located in the USA?
+
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Are you a U.S. citizen?
+
+          </label>
+        </div>
+          <div class="form-group">
+        <label for="exampleFormControlInput1">Github:</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1">
+      </div>
+          <div class="form-group">
+        <label for="exampleFormControlInput1">LinkedIn:</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1">
+      </div>
+          <div class="form-group">
+        <label for="exampleFormControlInput1">Personal Site:</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1">
+      </div>
+
+
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Why are you here?
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">I have a great concept to make a reality.</a>
+        <a class="dropdown-item" href="#">I have the skills to help turn a concept into a thriving business.</a>
+      </div>
+    </div>
+        <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        How many years of development experience do you have total?
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Fewer than 2</a>
+        <a class="dropdown-item" href="#">2-5</a>
+          <a class="dropdown-item" href="#">5-10</a>
+          <a class="dropdown-item" href="#">10+</a>
+      </div>
+    </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Tell us more about yourself and what you're looking for:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+    </div>
+</form>
+
+
+
+
+
+    <a type="button" class="btn btn-success" href="/">Submit</a>
+
+</form>
+{% endblock content %}

@@ -2,18 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f050d759-2525-4a41-8d47-c7fa9f53d3d1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CC_Flask/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CC_Flask/users/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CC_Flask/users/routes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/main/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/main/routes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/posts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/posts/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/posts/routes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/templates/conceptsfeed.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/templates/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/templates/engineerinfo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/templates/errors/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/templates/errors/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/templates/errors/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/templates/reset_request.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/templates/reset_token.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/templates/user_posts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CC_Flask/templates/userfeed.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CC_Flask/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CC_Flask/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CC_Flask/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CC_Flask/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CC_Flask/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CC_Flask/routes.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CC_Flask/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/site.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CC_Flask/static/profile_pics/default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/static/profile_pics/default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CC_Flask/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/static/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CC_Flask/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CC_Flask/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/templates/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CC_Flask/templates/create_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/templates/create_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CC_Flask/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CC_Flask/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CC_Flask/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CC_Flask/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/templates/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CC_Flask/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CC_Flask/users/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/CC_Flask/users/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +62,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\James\PycharmProjects\d2apiReact\CCFlask\CC_Flask\users" />
       <recent name="C:\Users\James\PycharmProjects\d2apiReact\CCFlask" />
     </key>
   </component>
@@ -101,26 +120,34 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="727" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602075837336">
+    <state x="727" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602097754354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="727" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1602075837336" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1602031946285">
+    <state x="727" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1602097754354" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1602085955328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1602031946285" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1602031946285">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1602085955328" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1602085955328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1602031946285" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1602031946285">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1602085955328" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1602085955328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1602031946285" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1602031946285">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1602085955328" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1602085955328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1602031946285" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1602085955328" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1602076902045">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040/-1920.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1602076902045" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602076902046">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/-1920.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1602076902046" />
     <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602075343354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

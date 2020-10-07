@@ -1,16 +1,26 @@
+
 {% extends "layout.html" %}
 {% block content %}
-    {% for post in posts %}
-        <article class="media content-section">
-          <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
-          <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="#">{{ post.author.username }}</a>
-              <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
-            </div>
-            <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
-            <p class="article-content">{{ post.content }}</p>
-          </div>
-        </article>
-    {% endfor %}
+    <div class="jumbotron jumbotron-fluid bg-light">
+      <div class="container">
+        <h1 class="display-4">Code Connect</h1>
+        <h2 class="lead">This is the best company idea ever.</h2>
+      </div>
+    </div>
+            {% if current_user.is_authenticated %}
+        <div class="card bg-light mt-75">
+            <a type="button" class="btn btn-success" href="/account">
+                Visit your Account
+            </a>
+        </div>
+
+              {% else %}
+        <div class="card bg-light mt-75">
+            <a type="button" class="btn btn-success" href="/register">
+                Get Started
+            </a>
+        </div>
+              {% endif %}
+
+
 {% endblock content %}
