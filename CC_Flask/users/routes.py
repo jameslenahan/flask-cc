@@ -1,7 +1,7 @@
 from flask import render_template, url_for, flash, redirect, request, Blueprint
 from flask_login import login_user, current_user, logout_user, login_required
 from CC_Flask import db, bcrypt
-from CC_Flask.models import User, Post
+from CC_Flask.models import User, Concept, Engineerprofile
 from CC_Flask.users.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
                                    RequestResetForm, ResetPasswordForm)
 from CC_Flask.users.utils import save_picture, send_reset_email
@@ -68,13 +68,13 @@ def account():
 
 
 @users.route("/user/<string:username>")
-def user_posts(username):
+def user_concepts(username):
     page = request.args.get('page', 1, type=int)
     user = User.query.filter_by(username=username).first_or_404()
-    posts = Post.query.filter_by(author=user)\
-        .order_by(Post.date_posted.desc())\
+    concepts = Concept.query.filter_by(author=user)\
+        .order_by(Concept.date_posted.desc())\
         .paginate(page=page, per_page=5)
-    return render_template('user_posts.html', posts=posts, user=user)
+    return render_template('user_concepts.html', concepts=concepts, user=user)
 
 
 @users.route("/reset_password", methods=['GET', 'POST'])
@@ -107,19 +107,19 @@ def reset_token(token):
         return redirect(url_for('users.login'))
     return render_template('reset_token.html', title='Reset Password', form=form)
 
-@users.route("/feed")
+@users.route("/engineerfeed")
 @login_required
 def feed():
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
-    return render_template('userfeed.html', posts=posts)
+    engineerprofiles = Engineerprofile.query.order_by(Engineerprofile.experienceyrs.desc()).paginate(page=page, per_page=5)
+    return render_template('engineerfeed.html', engineerprofiles=engineerprofiles)
 
 @users.route("/conceptsfeed")
 @login_required
 def conceptsfeed():
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
-    return render_template('conceptsfeed.html', posts=posts)
+    concepts = Concept.query.order_by(Concept.date_posted.desc()).paginate(page=page, per_page=5)
+    return render_template('conceptsfeed.html', concepts=concepts)
 
 @users.route("/account/engineerinfo")
 @login_required
