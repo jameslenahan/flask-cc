@@ -3,7 +3,7 @@ from flask import (render_template, url_for, flash,
 from flask_login import current_user, login_required
 from CC_Flask import db
 from CC_Flask.models import Engineerprofile
-from CC_Flask.engineerprofile.forms import EngineerprofileForm
+from CC_Flask.engineerprofile.forms import EngineerprofileForm, UpdateEngineerForm
 
 engineerprofiles = Blueprint('engineerprofiles', __name__)
 
@@ -60,3 +60,20 @@ def delete_engineerprofile(engineerprofile_id):
     db.session.commit()
     flash('Your engineerprofile has been deleted!', 'success')
     return redirect(url_for('main.home'))
+
+@engineerprofiles.route("/account/engineerinfo")
+@login_required
+def engineerinfo():
+    form = UpdateEngineerForm()
+    if form.validate_on_submit():
+        current_user.firstname = form.firstname.data
+        current_user.lastname = form.lastname.data
+        db.session.commit()
+        flash('Your account has been updated!', 'success')
+        return redirect(url_for('users.account'))
+    elif request.method == 'GET':
+        form.firstname.data = current_user.firstname
+        form.lastname.data = current_user.lastname
+    image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
+    return render_template('engineerinfo.html', title='Account',
+                           image_file=image_file, form=form)

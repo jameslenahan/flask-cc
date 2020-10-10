@@ -10,7 +10,7 @@ concepts = Blueprint('concepts', __name__)
 
 @concepts.route("/concept/new", methods=['GET', 'POST'])
 @login_required
-def new_post():
+def new_concept():
     form = ConceptForm()
     if form.validate_on_submit():
         concept = Concept(title=form.title.data, content=form.content.data, author=current_user)
@@ -30,7 +30,7 @@ def concept(concept_id):
 
 @concepts.route("/concept/<int:concept_id>/update", methods=['GET', 'POST'])
 @login_required
-def update_post(concept_id):
+def update_concept(concept_id):
     concept = Concept.query.get_or_404(concept_id)
     if concept.author != current_user:
         abort(403)
@@ -50,7 +50,7 @@ def update_post(concept_id):
 
 @concepts.route("/concept/<int:concept_id>/delete", methods=['POST'])
 @login_required
-def delete_post(concept_id):
+def delete_concept(concept_id):
     concept = Concept.query.get_or_404(concept_id)
     if concept.author != current_user:
         abort(403)

@@ -1,6 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, TextAreaField
-from wtforms.validators import DataRequired
+from flask_wtf.file import FileField, FileAllowed
+from flask_login import current_user
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from CC_Flask.models import User
 
 
 class EngineerprofileForm(FlaskForm):
@@ -17,3 +20,10 @@ class EngineerprofileForm(FlaskForm):
     blurb = StringField('Blurb', validators=[DataRequired()])
 
     submit = SubmitField('Engineerprofile')
+
+class UpdateEngineerForm(FlaskForm):
+    firstname = StringField('Firstname',
+                           validators=[DataRequired(), Length(min=2, max=20)])
+    lastname = StringField('Lastname',
+                        validators=[DataRequired(), Email()])
+    submit = SubmitField('Update')

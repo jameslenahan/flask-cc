@@ -7,13 +7,14 @@
           <div class="media-body">
             <div class="article-metadata">
 
-              <a class="mr-2" href="{{ url_for('users.user_engineerprofiles', username=engineerprofile.author.firstname) }}">{{ engineerprofile.author.firstname }}</a>
+              <a class="mr-2" href="{{ url_for('users.feed', username=engineerprofile.author.firstname) }}">{{ engineerprofile.author.firstname }}</a>
               <small class="text-muted">{{ engineerprofiles.lastname }}</small>
             </div>
-            <h2><a class="article-title" href="{{ url_for('engineerprofiles.engineerprofile', engineerprofile_id=engineerprofile.id) }}">{{ engineerprofile.uscitizen }}</a></h2>
+            <h2><a class="article-title" href="{{ url_for('engineerprofiles.engineerprofile', engineerprofile_id=engineerprofile.id) }}">{{ engineerprofile.firstname }}</a></h2>
             <p class="article-content">{{ engineerprofile.blurb }}</p>
           </div>
         </article>
+
 
     {% endfor %}
     {% for page_num in engineerprofiles.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
@@ -27,6 +28,7 @@
         ...
       {% endif %}
     {% endfor %}
+
 {% endblock content %}
 
 

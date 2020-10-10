@@ -21,6 +21,7 @@
                 </div>
                 <div class="form-group">
                     {{ form.lastname.label(class="form-control-label") }}
+
                     {% if form.lastname.errors %}
                         {{ form.lastname(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
@@ -32,8 +33,23 @@
                         {{ form.lastname(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                                                <div class="form-group">
+                    {{ form.uscitizen.label(class="form-control-label") }}
+
+                    {% if form.uscitizen.errors %}
+                        {{ form.uscitizen(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.uscitizen.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.uscitizen(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
                 <div class="form-group">
                     {{ form.github.label(class="form-control-label") }}
+
                     {% if form.github.errors %}
                         {{ form.github(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
@@ -45,6 +61,104 @@
                         {{ form.github(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                <div class="form-group">
+                    {{ form.linkedin.label(class="form-control-label") }}
+
+                    {% if form.linkedin.errors %}
+                        {{ form.linkedin(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.linkedin.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.linkedin(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                                <div class="form-group">
+                    {{ form.personalsite.label(class="form-control-label") }}
+                    {% if form.personalsite.errors %}
+                        {{ form.personalsite(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.personalsite.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.personalsite(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                                <div class="form-group">
+                    {{ form.reason.label(class="form-control-label") }}
+                    {% if form.reason.errors %}
+                        {{ form.reason(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.reason.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.reason(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                                <div class="form-group">
+                    {{ form.experienceyrs.label(class="form-control-label") }}
+
+                    {% if form.experienceyrs.errors %}
+                        {{ form.experienceyrs(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.experienceyrs.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.experienceyrs(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                                <div class="form-group">
+                    {{ form.languages.label(class="form-control-label") }}
+
+                    {% if form.languages.errors %}
+                        {{ form.languages(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.languages.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.languages(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                                <div class="form-group">
+                    {{ form.interest.label(class="form-control-label") }}
+
+                    {% if form.interest.errors %}
+                        {{ form.interest(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.interest.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.interest(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                                <div class="form-group">
+                    {{ form.blurb.label(class="form-control-label") }}
+
+                    {% if form.blurb.errors %}
+                        {{ form.blurb(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.blurb.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.blurb(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+
 
             </fieldset>
             <div class="form-group">

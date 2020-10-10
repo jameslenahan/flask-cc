@@ -51,7 +51,7 @@ class Engineerprofile(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     firstname = db.Column(db.String(100), nullable=False)
     lastname = db.Column(db.String(100), nullable=False)
-    uscitizen = db.Column(db.Boolean, nullable=False)
+    uscitizen = db.Column(db.String(100), nullable=False)
     github = db.Column(db.String(100), nullable=False)
     linkedin = db.Column(db.String(100), nullable=False)
     personalsite = db.Column(db.String(100), nullable=False)

@@ -22,11 +22,12 @@ def create_app(config_class=Config):
     bcrypt.init_app(app)
     login_manager.init_app(app)
     mail.init_app(app)
-
+    from CC_Flask.engineerprofile.routes import engineerprofiles
     from CC_Flask.users.routes import users
     from CC_Flask.concepts.routes import concepts
     from CC_Flask.main.routes import main
     from CC_Flask.errors.handlers import errors
+    app.register_blueprint(engineerprofiles)
     app.register_blueprint(users)
     app.register_blueprint(concepts)
     app.register_blueprint(main)

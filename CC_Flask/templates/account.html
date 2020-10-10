@@ -53,8 +53,8 @@
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-success") }}
             </div>
-
+        <a class="btn btn-outline-primary" href="{{ url_for('engineerprofiles.new_engineerprofile') }}" role="button">Create Engineer Profile</a>
         </form>
-                <a class="btn btn-outline-primary" href="{{ url_for('users.engineerinfo') }}" role="button">Create Engineer Profile</a>
+
     </div>
 {% endblock content %}
